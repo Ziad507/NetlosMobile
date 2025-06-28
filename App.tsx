@@ -12,7 +12,8 @@ import 'react-native-get-random-values';
 import { v4 as uuidv4 } from 'uuid';
 
 export default function App() {
-  const JWT_TOKEN = '<YOUR_JWT_TOKEN>';
+  const JWT_TOKEN =
+    '<eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im9wcyI6ImF1dGgiLCJjbGllbnRfdXVpZCI6ImNlN2Y3MDc0LThmYmItNDEwNC04ODA2LTdkMmVhNGVkNzNkNiIsInRlcm1pbmFsX2lkIjoiMDIxMTUzMTMwMDExNTMxMyJ9LCJpYXQiOjE3NTExMzgwNTN9.NstKq_FUD_omtG1eMH3BG1jJe5WpVR87pB_4i7dop1UqnBLSNBbbh5dXf1m1dfEo61eZ1PAgygphUrk4IbShoUOtZxnDJYJC6_k70ZvIsENL7IxHzokys4SLszK0AEsPXPIUCyiibfDKWs87BV8WanPvOwbXSKRXWKMKfjoUT8tJ-esQcs-OBRcjxH9TuasKSBZeJE1AcJ5YjGVL8zAXTEqZmkQPCAqrV-vjT6aiOBWmOie71citQ19Jp-7DGcfNcnTQeq-u7Y3l_ibUvhj2OzEZ2G4gM_LVrywK2pAmBabA-xw5Vdcah5OQhJsaIVOUw1aD0CD-RAu10MsjCnJGQA>';
   const [connectedTerminal, setConnectedTerminal] =
     useState<TerminalModel | null>(null);
 
@@ -71,7 +72,7 @@ export default function App() {
         await connectedTerminal.purchase({
           transactionUuid: uuidv4(),
           amount,
-          scheme: PaymentScheme.VISA,
+          scheme: PaymentScheme.MADA,
           customerReferenceNumber: reference,
           callbacks: {
             cardReaderCallbacks,

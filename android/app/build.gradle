@@ -75,6 +75,9 @@ android {
 dependencies {
     // React Native core
     implementation("com.facebook.react:react-android")
+    implementation ("com.huawei.hms:location:6.4.0.300")
+    implementation ("io.nearpay:terminalsdk-release:0.0.70")
+    implementation ("com.google.android.gms:play-services-location:20.0.0")
 
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")

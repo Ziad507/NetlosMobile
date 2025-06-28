@@ -4,3 +4,25 @@ extensions.configure(com.facebook.react.ReactSettingsExtension){ ex -> ex.autoli
 rootProject.name = 'NetlosMobile'
 include ':app'
 includeBuild('../node_modules/@react-native/gradle-plugin')
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+
+        
+        maven { url 'https://developer.huawei.com/repo/' }
+       
+        maven {
+            url = uri("https://gitlab.com/api/v4/projects/37026421/packages/maven")
+            credentials(HttpHeaderCredentials) {
+                name = "Private-Token"
+                value = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im9wcyI6ImF1dGgiLCJjbGllbnRfdXVpZCI6ImNlN2Y3MDc0LThmYmItNDEwNC04ODA2LTdkMmVhNGVkNzNkNiIsInRlcm1pbmFsX2lkIjoiMDIxMTUzMTMwMDExNTMxMyJ9LCJpYXQiOjE3NTExMzgwNTN9.NstKq_FUD_omtG1eMH3BG1jJe5WpVR87pB_4i7dop1UqnBLSNBbbh5dXf1m1dfEo61eZ1PAgygphUrk4IbShoUOtZxnDJYJC6_k70ZvIsENL7IxHzokys4SLszK0AEsPXPIUCyiibfDKWs87BV8WanPvOwbXSKRXWKMKfjoUT8tJ-esQcs-OBRcjxH9TuasKSBZeJE1AcJ5YjGVL8zAXTEqZmkQPCAqrV-vjT6aiOBWmOie71citQ19Jp-7DGcfNcnTQeq-u7Y3l_ibUvhj2OzEZ2G4gM_LVrywK2pAmBabA-xw5Vdcah5OQhJsaIVOUw1aD0CD-RAu10MsjCnJGQA" // ← استبدلها بالتوكن الخاص بك
+            }
+            authentication {
+                create("header", HttpHeaderAuthentication)
+            }
+        }
+    }
+}
